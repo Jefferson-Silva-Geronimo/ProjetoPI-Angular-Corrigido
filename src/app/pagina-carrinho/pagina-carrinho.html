@@ -1,0 +1,48 @@
+<section class="carrinho-container">
+  <h2>Seu Carrinho</h2>
+
+  <div *ngIf="itens.length === 0" class="carrinho-vazio">
+    <p>🛒 Seu carrinho está vazio</p>
+    <a routerLink="" class="btn">Continuar Comprando</a>
+  </div>
+
+  <div *ngIf="itens.length > 0" class="carrinho-conteudo">
+    <div class="carrinho-items">
+      <div *ngFor="let item of itens" class="item">
+        <img [src]="item.produto.imagemUrl" [alt]="item.produto.nome" />
+        <div class="detalhes">
+          <h3>{{ item.produto.nome }}</h3>
+          <p *ngIf="item.tamanho">Tamanho: {{ item.tamanho }}</p>
+          <p class="preco">R$ {{ item.produto.preco.toFixed(2) }}</p>
+        </div>
+
+        <div class="quantidade-controle">
+          <button (click)="atualizarQuantidade(item, item.quantidade - 1)">-</button>
+          <span>{{ item.quantidade }}</span>
+          <button (click)="atualizarQuantidade(item, item.quantidade + 1)">+</button>
+        </div>
+
+        <button class="remover" (click)="removerItem(item)">✕</button>
+      </div>
+    </div>
+
+    <aside class="resumo">
+      <h2>Resumo da Compra</h2>
+      <div class="linha">
+        <span>Subtotal</span>
+        <span class="valor">R$ {{ subtotal.toFixed(2) }}</span>
+      </div>
+      <div class="linha">
+        <span>Frete</span>
+        <span class="valor">R$ {{ frete.toFixed(2) }}</span>
+      </div>
+      <div class="linha total">
+        <span>Total</span>
+        <span class="valor">R$ {{ total.toFixed(2) }}</span>
+      </div>
+
+      <button class="btn finalizar" (click)="finalizarCompra()">Finalizar Compra</button>
+      <a routerLink="" class="btn secundario">Continuar Comprando</a>
+    </aside>
+  </div>
+</section>

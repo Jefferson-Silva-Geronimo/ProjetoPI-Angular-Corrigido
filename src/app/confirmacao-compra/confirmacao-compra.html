@@ -1,0 +1,32 @@
+<section class="confirmacao-container">
+  <div class="card-confirmacao">
+    <div class="icone">
+      ✅
+    </div>
+
+    <h1>Compra Confirmada!</h1>
+    <p class="mensagem">
+      Obrigado por comprar conosco. Seu pedido foi recebido e está sendo processado.
+    </p>
+
+    <div class="detalhes-pedido">
+      <div class="linha">
+        <span><strong>Número do Pedido:</strong></span>
+        <span>{{ numeroPedido }}</span>
+      </div>
+      <div class="linha">
+        <span><strong>Data:</strong></span>
+        <span>{{ data }}</span>
+      </div>
+      <div class="linha">
+        <span><strong>Status:</strong></span>
+        <span class="status">Pagamento confirmado</span>
+      </div>
+    </div>
+
+    <div class="acoes">
+      <button class="btn" (click)="voltarHome()">🏠 Voltar à Home</button>
+      <button class="btn secundario" (click)="verPedidos()">📦 Ver Meus Pedidos</button>
+    </div>
+  </div>
+</section>

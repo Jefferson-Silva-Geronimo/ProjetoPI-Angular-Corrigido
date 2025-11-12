@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="area-card">
+    <a routerLink="/login-adm">
+      👤 Área do Administrador
+    </a>
+  </div>
+
+  <div class="marca">
+    <img src="assets/logo.png" alt="logo">
+    <h1>HYPE DUNK</h1>
+  </div>
+
+  <div class="wrapper">
+    <h1>Login</h1>
+    <form (ngSubmit)="fazerLogin()">
+      <div class="input-box">
+        <input type="email" placeholder="E-mail" [(ngModel)]="email" name="email">
+        <span class="icon">👤</span>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Senha" [(ngModel)]="senha" name="senha">
+        <span class="icon">🔒</span>
+      </div>
+      <div class="esqueceu-senha">
+        <label>
+          <input type="checkbox" [(ngModel)]="lembrar" name="lembrar"> Lembre-se de Mim
+        </label>
+      </div>
+      <button type="submit" class="btn">Entrar</button>
+      <div class="registrar-conta">
+        <p>Não tem uma conta? <a routerLink="/cadastro">Cadastre-se</a></p>
+      </div>
+    </form>
+  </div>
+</div>

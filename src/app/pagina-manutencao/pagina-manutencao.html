@@ -1,0 +1,18 @@
+<button class="btn-incluir" [routerLink]="['/admin/manutencao/incluir']">Incluir</button>
+
+<div class="container">
+  @for (produto of listaProdutos; track produto) {
+    <div class="produto-item">
+      <div class="produto-item-id">ID: {{ produto.id }}</div>
+      <div class="produto-item-nome">Nome: {{ produto.nome }}</div>
+      <div class="produto-item-preco">Preço: {{ produto.preco }}</div>
+      <div>
+        <img [src]="produto.imagemUrl" alt="imagem do tênis" class="produto-item-img"/>
+      </div>
+      <div class="produto-item-desc">Descrição: {{ produto.descricao }}</div>
+      <div class="produto-item-tamanho">Tamanhos: {{ produto.tamanhosDisponiveis }}</div>
+      <button class="btn-editar" [routerLink]="['/admin/manutencao/alterar', produto.id]">Editar</button>
+      <button class="btn-excluir" (click)="excluir(produto.id!)">Excluir</button>
+    </div>
+  }
+</div>

@@ -1,0 +1,76 @@
+{
+  "produtos": [
+    {
+      "id": "1",
+      "nome": "Nike Air Force 1",
+      "preco": 799.9,
+      "imagemUrl": "assets/tipo-tenis-1.jpg",
+      "descricao": "O clássico que nunca sai de moda. Conforto e estilo em cada passo.",
+      "tamanhosDisponiveis": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    {
+      "id": "3",
+      "nome": "Puma Suede Classic",
+      "preco": 1000,
+      "imagemUrl": "assets/tipo-tenis-3.jpg",
+      "descricao": "Design retrô e materiais premium. Um ícone de estilo urbano.",
+      "tamanhosDisponiveis": [
+        37,
+        38,
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "id": "4",
+      "nome": "Asics Gel-Nimbus 25",
+      "preco": 999.9,
+      "imagemUrl": "assets/tipo-tenis-4.jpg",
+      "descricao": "Amortecimento máximo com tecnologia GEL para corridas de longa distância.",
+      "tamanhosDisponiveis": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    {
+      "id": "5",
+      "nome": "New Balance 574",
+      "preco": 679.9,
+      "imagemUrl": "assets/tipo-tenis-5.jpg",
+      "descricao": "Equilíbrio entre conforto e estilo, com o visual clássico da New Balance.",
+      "tamanhosDisponiveis": [
+        37,
+        38,
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "id": "6",
+      "nome": "Vans Old Skool",
+      "preco": 459.9,
+      "imagemUrl": "assets/tipo-tenis-6.jpg",
+      "descricao": "O favorito dos skatistas. Estilo atemporal e solado resistente.",
+      "tamanhosDisponiveis": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ]
+    }
+  ],
+  "carrinho": []
+}

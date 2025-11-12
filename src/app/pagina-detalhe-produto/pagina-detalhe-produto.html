@@ -1,0 +1,42 @@
+@if (produto) {
+<section class="produto-detalhe">
+  <div class="container">
+    <div class="produto-imagem">
+      <img [src]="produto.imagemUrl" [alt]="produto.nome">
+    </div>
+
+    <div class="produto-info">
+      <h1>{{ produto.nome }}</h1>
+      <p class="preco">R$ {{ produto.preco}}</p>
+      @if (produto.descricao) {
+        <p class="descricao">{{ produto.descricao }}</p>
+      }
+
+      @if (produto.tamanhosDisponiveis.length) {
+        <div class="tamanhos">
+          <h3>Selecione o tamanho:</h3>
+          <div class="tamanhos-grid">
+            @for (tamanho of produto.tamanhosDisponiveis; track tamanho) {
+              <button
+                [class.selecionado]="tamanhoSelecionado === tamanho"
+                (click)="tamanhoSelecionado = tamanho">
+                {{ tamanho }}
+              </button>
+            }
+          </div>
+        </div>
+      }
+
+      <div class="acoes">
+        <button class="btn-adicionar" (click)="adicionarAoCarrinho()">🛒 Adicionar ao Carrinho</button>
+        <a (click)="voltar()" class="btn-voltar">← Voltar</a>
+      </div>
+    </div>
+  </div>
+</section>
+} @else {
+<div class="produto-nao-encontrado">
+  <h2>Produto não encontrado</h2>
+  <a routerLink="" class="btn">Voltar para Home</a>
+</div>
+}

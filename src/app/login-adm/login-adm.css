@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);
+  position: relative;
+}
+
+.area-card {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  z-index: 10;
+}
+
+.area-card a {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 10px 25px;
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.area-card a:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.marca {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.marca img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.marca h1 {
+  color: #fff;
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.admin-badge {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 8px 25px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 45px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wrapper h1 {
+  text-align: center;
+  color: #111;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 15px 45px 15px 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f5f5f5;
+  color: #111;
+}
+
+.input-box input:focus {
+  outline: none;
+  border-color: #f97316;
+  box-shadow: 0 0 8px rgba(249, 115, 22, 0.5);
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: #666;
+  pointer-events: none;
+}
+
+.btn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.5);
+}
+
+.registrar-conta {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.registrar-conta a {
+  color: #f97316;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.registrar-conta a:hover {
+  color: #dc2626;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .area-card {
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .wrapper {
+    padding: 35px 20px;
+  }
+
+  .marca h1 {
+    font-size: 1.8rem;
+  }
+
+  .admin-badge {
+    font-size: 1rem;
+    padding: 6px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .marca img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .wrapper h1 {
+    font-size: 1.6rem;
+  }
+
+  .input-box input {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}

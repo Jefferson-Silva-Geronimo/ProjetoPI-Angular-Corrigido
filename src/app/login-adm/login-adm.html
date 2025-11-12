@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="area-card">
+    <a routerLink="/login">
+      👤 Área do Cliente
+    </a>
+  </div>
+
+  <div class="marca">
+    <img src="assets/logo.png" alt="logo">
+    <h1>HYPE DUNK</h1>
+    <p class="admin-badge">🔐 Área Administrativa</p>
+  </div>
+
+  <div class="wrapper">
+    <h1>Login Admin</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="fazerLogin()">
+      <div class="input-box">
+        <input type="email" placeholder="E-mail do Administrador" formControlName="email">
+        <span class="icon">👤</span>
+      </div>
+
+      <div class="input-box">
+        <input type="password" placeholder="Senha" formControlName="senha">
+        <span class="icon">🔒</span>
+      </div>
+
+      <button type="submit" class="btn">Entrar como Admin</button>
+    </form>
+  </div>
+</div>

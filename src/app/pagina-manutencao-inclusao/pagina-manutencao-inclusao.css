@@ -1,0 +1,169 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f8f9fa;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #111;
+}
+
+.content-container {
+  max-width: 700px;
+  width: calc(100% - 40px);
+  margin: 40px auto;
+  padding: 40px 32px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #222;
+  margin-bottom: 6px;
+  display: block;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  background: #f9fafb;
+  font-size: 1rem;
+  color: #111;
+  transition: all 0.25s ease;
+}
+
+input::placeholder {
+  color: #9ca3af;
+}
+
+input:focus {
+  outline: none;
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+.linha-tamanho {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-adicionar {
+  background: #f97316;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.btn-adicionar:hover {
+  background: #e55d00;
+  transform: translateY(-2px);
+}
+
+.lista-tamanhos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.lista-tamanhos span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f3f4f6;
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #111;
+  font-weight: 500;
+}
+
+.item-exclui-tamanho {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.item-exclui-tamanho:hover {
+  color: #dc2626;
+}
+
+.input-submeter {
+  background: #10b981;
+  color: #fff;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+  margin-top: 12px;
+}
+
+.input-submeter:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .content-container {
+    width: calc(100% - 24px);
+    padding: 28px 20px;
+    margin: 20px auto;
+  }
+
+  .titulo {
+    font-size: 1.6rem;
+    margin-bottom: 22px;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    font-size: 1rem;
+    padding: 12px 12px;
+  }
+
+  .linha-tamanho {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-adicionar,
+  .input-submeter {
+    width: 100%;
+  }
+}
