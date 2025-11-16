@@ -9,4 +9,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './header.html',
   styleUrls: ['./header.css'],
 })
-export class Header {}
+export class Header {
+  menuAberto = false;
+
+  alternarMenu() {
+    this.menuAberto = !this.menuAberto;
+  }
+}

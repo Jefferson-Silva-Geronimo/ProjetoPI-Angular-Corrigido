@@ -5,7 +5,14 @@
       <h1 class="titulo-logo">HYPE DUNK</h1>
     </div>
   </a>
-  <nav class="menu-navegacao">
+
+  <div class="hamburger" (click)="alternarMenu()" [class.active]="menuAberto">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <nav class="menu-navegacao" [class.active]="menuAberto">
     <a routerLink="">Inicio</a>
     <a routerLink="/carrinho">Carrinho</a>
     <a routerLink="/login">Login</a>
