@@ -1,41 +1,83 @@
 <div class="content-container">
-  <h1 class="titulo">{{titulo}}</h1>
+  <h1 class="titulo">{{ titulo }}</h1>
 
-  <form class="Form">
+  <form class="Form" [formGroup]="form" (ngSubmit)="submeter()" novalidate>
+
     <label for="input-id" class="input-id">ID</label>
-    <input type="text" class="input-id" name="input-id" placeholder="Digite o ID" [(ngModel)]="produto.id"/>
+    <input
+      id="input-id"
+      type="text"
+      class="input-id"
+      name="input-id"
+      placeholder="Digite o ID"
+      formControlName="id"
+    />
 
     <label for="input-nome" class="input-nome">nome</label>
-    <input type="text" class="input-nome" name="input-nome" placeholder="Digite o nome" [(ngModel)]="produto.nome"/>
+    <input
+      id="input-nome"
+      type="text"
+      class="input-nome"
+      name="input-nome"
+      placeholder="Digite o nome"
+      formControlName="nome"
+    />
 
     <label for="input-preco" class="input-preco">Preço</label>
-    <input type="number" class="input-preco" name="input-preco" placeholder="Digite o Preço" [(ngModel)]="produto.preco"/>
+    <input
+      id="input-preco"
+      type="number"
+      class="input-preco"
+      name="input-preco"
+      placeholder="Digite o Preço"
+      formControlName="preco"
+    />
 
     <label for="input-imagem" class="input-imagem">Imagem</label>
-    <input type="text" class="input-imagem" name="input-imagem" placeholder="Digite o imagem" [(ngModel)]="produto.imagemUrl"/>
+    <input
+      id="input-imagem"
+      type="text"
+      class="input-imagem"
+      name="input-imagem"
+      placeholder="Digite o imagem"
+      formControlName="imagemUrl"
+    />
 
     <label for="input-descricao" class="input-descricao">Descrição</label>
-    <input type="text" class="input-descricao" name="input-descricao" placeholder="Digite o Descrição" [(ngModel)]="produto.descricao"/>
+    <input
+      id="input-descricao"
+      type="text"
+      class="input-descricao"
+      name="input-descricao"
+      placeholder="Digite o Descrição"
+      formControlName="descricao"
+    />
 
     <label for="input-tamanhos" class="input-tamanhos">Tamanhos</label>
+
     <div class="linha-tamanho">
-      <input type="number" class="input-tamanhos" name="input-tamanhos" placeholder="Ex: 38" [(ngModel)]="tamanhoTemp"/>
-      <button type="button" (click)="adicionarTamanho()" class="btn-adicionar">Adicionar</button>
+      <input
+        id="input-tamanhos"
+        type="number"
+        class="input-tamanhos"
+        placeholder="Ex: 38"
+        formControlName="tamanhoTemp"
+      />
+      <button type="button" (click)="adicionarTamanho()" class="btn-adicionar">
+        Adicionar
+      </button>
     </div>
 
-    @if(produto.tamanhosDisponiveis.length){
-      <div class="lista-tamanhos">
-        @for(tamanho of produto.tamanhosDisponiveis; track tamanho){
-          <span>
-            {{ tamanho }}
-            <button type="button" (click)="removerTamanho(tamanho)" class="item-exclui-tamanho">x</button>
-          </span>
-        }
-      </div>
-    }
+    <div class="lista-tamanhos" *ngIf="form.get('tamanhosDisponiveis')?.value?.length">
+      <span *ngFor="let tamanho of form.get('tamanhosDisponiveis')?.value">
+        {{ tamanho }}
+        <button type="button" (click)="removerTamanho(tamanho)" class="item-exclui-tamanho">x</button>
+      </span>
+    </div>
 
-    <button class="input-submeter" (click)="submeter()">
+    <button class="input-submeter" type="submit" [disabled]="form.invalid">
       Salvar
     </button>
+
   </form>
 </div>
